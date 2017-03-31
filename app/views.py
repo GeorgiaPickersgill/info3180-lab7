@@ -52,7 +52,11 @@ def getThumbnails():
     all= {"error": error, "message": message, "thumbnails": thumbnails}
     return jsonify(all)
     
-
+@app.route("/thumbnails/view")
+def viewThumbnails():
+    
+    return render_template("thumbnails.html")
+    
 @app.errorhandler(404)
 def page_not_found(error):
     """Custom 404 page."""
