@@ -20,14 +20,16 @@ def get_image():
     if thumbnail_spec and thumbnail_spec['href']:
         #print thumbnail_spec['href']
         #print ''
-        allurl.append(thumbnail_spec['href'])
+        if thumbnail_spec['href'] not in allurl:
+            allurl.append(thumbnail_spec['href'])
         
         
     image = """<img src="%s"><br />"""
     for img in soup.findAll("img", src=True):
         #print image % urlparse.urljoin(url, img["src"])
         #print ''
-        allurl.append(img['src'])
+        if img["src"] not in allurl:
+            allurl.append(img['src'])
         
-    #print allurl
+    print allurl
     return allurl

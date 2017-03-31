@@ -2,13 +2,15 @@
 
 {% block main %}
 
-<div ng-app = "thumnailsApp" ng-controller = 'thumbnailsCtrl'>
+<h1> Thumbnails</h1>
+
+<div class = "main" ng-app = "thumnailsApp" ng-controller = 'thumbnailsCtrl'>
     {% raw %}
-    <ul>
-        <li ng-repeat = "x in mythumb ">
-            {{x}}
-        </li>
-    </ul>
+   
+        <div class="pic" ng-repeat = "x in mythumbs ">
+            <img ng-src="{{x}}"/>
+        </div>
+    
     
     {% endraw %}
 </div>
